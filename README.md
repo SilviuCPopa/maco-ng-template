@@ -145,7 +145,7 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
  constructor(private dialogService: DialogService) {}
 
  showFormInPopup() {
-	this.formDialogRef = this.dialogService.openDialog(FormDialogComponent, {
+  this.formDialogRef = this.dialogService.openDialog(FormDialogComponent, {
       data: {
         key: 'dialog-form-key',
         width: '500',
@@ -158,13 +158,12 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
 }
 
  onDialogClose() {
-	this.formDialogRef.afterClosed().pipe()
-    .subscribe( (action: DialogAction) => {
-	    if (action?.key === DefaultFormAction.create) {
-		    // save the date
-	    }
+  this.formDialogRef.afterClosed().pipe().subscribe( (action: DialogAction) => {
+    if (action?.key === DefaultFormAction.create) {
+      // process data
+      }
     }
-}
+  }
 ```
 
 
