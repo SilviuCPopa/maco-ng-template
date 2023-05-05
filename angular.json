@@ -3,5 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "maco-ng-template": {
+      "projectType": "library",
+      "root": "projects/maco-ng-template",
+      "sourceRoot": "projects/maco-ng-template/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/maco-ng-template/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/maco-ng-template/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/maco-ng-template/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/maco-ng-template/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
   }
 }

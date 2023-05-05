@@ -1,0 +1,13 @@
+<mat-form-field class="tf-timepicker-item">
+  <input matInput
+      [ngxMatDatetimePicker]="picker"
+      [value]="formItem?.value"
+      placeholder="{{ formItem.label.toString() | translate }}"
+      [formControl]="formControl">
+  <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+  <ngx-mat-datetime-picker #picker
+      [showSpinners]="true"
+      [showSeconds]="true"
+      [touchUi]="true">
+  </ngx-mat-datetime-picker>
+</mat-form-field>

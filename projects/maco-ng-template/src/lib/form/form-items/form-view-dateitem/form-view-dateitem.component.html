@@ -1,0 +1,10 @@
+<mat-form-field class="ft-date-item" [style.width.%]="100">
+    <input matInput
+        [formControl]="formControl"
+        [matDatepicker]="datePicker"
+        autocomplete="false"
+        placeholder="{{ formItem.label.toString() | translate }}"
+        (dateChange)="onInputChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+  </mat-form-field>

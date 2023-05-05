@@ -1,0 +1,10 @@
+<mat-form-field>
+    <input matInput
+           placeholder="{{ formItem.label | translate }} {{ isRequired() ? '*': '' }}"
+           [type]="formItem.fieldType"
+           [value]="formItem.value"
+           [formControl]="formControl"
+           (input)="onInputChange($event)">
+    <mat-icon matSuffix>{{ formItem.icon }}</mat-icon>
+    <mat-error>{{ getErrorMessage() | translate }}</mat-error>
+</mat-form-field>

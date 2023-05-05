@@ -1,0 +1,6 @@
+
+<mat-checkbox [checked]="!!formItem.value"
+                style="float:left;"
+                [style.marginTop.px]="10"
+                [formControl]="formControl"
+                (change)="onInputChange($event)">{{ formItem.label | translate }}</mat-checkbox>

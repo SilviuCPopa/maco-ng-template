@@ -1,0 +1,8 @@
+<div class="app-form-column" *ngFor="let column of formContainer.columns">
+
+  <div [ngClass]="'app-form-container-' + column.renderType">
+    <div class="app-form-item" [ngClass]="{ 'hidden': formItem.width == 0 }" [ngStyle]="{ 'width.%': formItem.width }" *ngFor="let formItem of column?.items">
+      <tf-form-item-dispacher [formItem]="formItem" [key]="formContainer.key"></tf-form-item-dispacher>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="form-view-radio-group" >
+    <span class="form-view-radio-label">{{ formItem.label | translate }}:</span>
+    <mat-radio-group [formControl]="formControl">
+        <mat-radio-button *ngFor="let option of formItem.options" (change)="onInputChange($event)"
+            class="form-view-radio-item"
+            [value]="option.value">{{ option.name }}</mat-radio-button>
+    </mat-radio-group>
+</div>

@@ -1,0 +1,7 @@
+<mat-dialog-content class="mat-typography entity-dialog">
+    <p>{{data.message | translate }} <b>{{ data?.item }}</b></p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ 'APP.ACTIONS.CANCEL' | translate }}</button>
+  <button mat-raised-button (click)="onConfirm()" color="primary">{{ 'APP.ACTIONS.CONFIRM' | translate }}</button>
+</mat-dialog-actions>

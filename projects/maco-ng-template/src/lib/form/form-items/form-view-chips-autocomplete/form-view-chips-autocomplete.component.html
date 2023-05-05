@@ -1,0 +1,28 @@
+<mat-form-field style="width: 100%;">
+    <mat-label>{{ formItem.label | translate }} {{ isRequired() ? '*': '' }}</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Fruit selection">
+      <mat-chip-row
+        *ngFor="let item of options; let i=index"
+        [editable]="selectable"
+        [removable]="removable"
+        (removed)="remove(i)">
+        {{item.name}}
+        <mat-icon *ngIf="removable" matChipRemove>cancel</mat-icon>
+      </mat-chip-row>
+      <input
+        #formInput
+        name="chips-autocomplete"
+        placeholder="{{ formItem.label | translate }}"
+        [formControl]="chipsInputControl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="add($event)">
+        <p style="color:red" *ngIf="isFormControlRequired() || isFormControlInvalid()">{{ getErrorMessage() | translate }}</p>
+    </mat-chip-grid>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>

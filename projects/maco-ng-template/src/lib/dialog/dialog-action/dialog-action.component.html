@@ -1,0 +1,6 @@
+<button *ngFor="let action of actions"
+        mat-raised-button
+        class="tf-dialog-action"
+        color="{{ action.matColor }}"
+        [disabled]="action.disabled"
+        (click)="onActionClicked(action)">{{ action.label | translate }}</button>

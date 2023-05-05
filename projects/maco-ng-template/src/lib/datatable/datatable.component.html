@@ -1,0 +1,83 @@
+<div class="app-datatable-container"
+     [style.width]="properties.width ? properties.width + properties.type : ''">
+
+    <mat-spinner *ngIf="loadingData" class="spinner"></mat-spinner>
+
+    <div *ngIf="data.rows.length > 0; else noItemsTemplate">
+        <table  *ngIf="!loadingData"
+                mat-table
+                [dataSource]="$any(data?.rows)"
+                [ngClass]="properties?.classList">
+
+            <ng-container *ngFor="let column of data?.columns;" matColumnDef="{{ column.id }}">
+                <th mat-header-cell
+                    *matHeaderCellDef
+                    mat-sort-header
+                    [style.width]="getColumnWidth(column)">
+
+                    <span *ngIf="!column.translate"> {{ column.display }} </span>
+                    <span *ngIf="column.translate"> {{ column.display | translate }} </span>
+                </th>
+
+                <td
+                    mat-cell
+                    *matCellDef="let row; let i = index;"
+                    (contextmenu)="onContextMenu($event, row)"
+                    [style.text-align]="column.textAlign ? column.textAlign : 'left'"
+                    [style.width]="getColumnWidth(column)">
+
+                    <ng-container [ngSwitch]="column.type">
+                        <span [style.color]="getColumnColor(column, row[column.id])" *ngSwitchCase="'text'">
+                             {{ row[column.id] }} {{ column.suffix }}
+                        </span>
+                        <span [style.color]="getColumnColor(column, row[column.id])" *ngSwitchCase="'index'"> {{i + 1}}. </span>
+                        <mat-icon *ngSwitchCase="'icon'"> {{ column.icon }} </mat-icon>
+                        <mat-icon *ngSwitchCase="'action'"
+                            click-stop-propagation
+                            style="cursor: pointer;"
+                            (click)="onActionClick(column.id, i)"> {{ column.icon }} </mat-icon>
+                        <span *ngSwitchCase="'option'">
+                            <button mat-icon-button [matMenuTriggerFor]="contextMenu" [matMenuTriggerData]="{ 'column': column, 'row': row }">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                        </span>
+                        <span *ngSwitchCase="'date'">
+                            {{ row[column.id] | date:column.format }}
+                        </span>
+                        <span *ngSwitchDefault>{{ row[column.id] + '' + column.suffix }}</span>
+                    </ng-container>
+                </td>
+
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsRefsIds"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsRefsIds"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+
+    <div style="visibility: hidden; position: fixed"
+        [style.left]="contextMenuPosition.x"
+        [style.top]="contextMenuPosition.y"
+        [matMenuTriggerFor]="contextMenu">
+    </div>
+
+    <mat-menu #contextMenu="matMenu">
+        <ng-template matMenuContent let-column="column" let-row="row">
+            <div *ngIf="column">
+                <button mat-menu-item *ngFor="let option of column.properties" (click)="onExecuteRowAction(option, row)">
+                    <mat-icon>{{ option.icon }}</mat-icon>
+                    <span>{{ option.label | translate }}</span>
+                </button>
+            </div>
+        </ng-template>
+    </mat-menu>
+
+    <ng-template #noItemsTemplate>
+        <div class="app-datatable-empty">
+           <mat-icon>apps</mat-icon>
+           <div>No data found</div>
+        </div>
+     </ng-template>
+</div>

@@ -1,0 +1,13 @@
+<mat-form-field *ngIf="formItem">
+    <mat-select
+        [formControl]="formControl"
+        placeholder="{{ formItem.label | translate }} {{ isRequired() ? '*': '' }}"
+        (selectionChange)="onInputChange($event)">
+        <mat-option *ngFor="let option of formItem.options"
+            class="form-view-radio-item"
+            [value]="option">{{ option.name }}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+
+
