@@ -10,6 +10,7 @@ Import angular gmaps module into your app's module:
 
     import {NgModule} from '@angular/core';
     import {MacoNgCoreModule} from 'maco-ng-template';
+
     @NgModule({
      imports: [MacoNgCoreModule]
      })
@@ -17,9 +18,12 @@ Import angular gmaps module into your app's module:
 
  Finally connect the component in  template:
 ```
-	<tf-form-container [formContainer]="formContainer"
+
+  <tf-form-container [formContainer]="formContainer"
                         (formChanged)="onFormChanged($event)"></tf-form-container>
-    <tf-dialog-action [key]="formContainer.key" [actions]="formContainer.actions"></tf-dialog-action>
+
+  <tf-dialog-action [key]="formContainer.key" [actions]="formContainer.actions"></tf-dialog-action>
+
   ```
 
 Example of a formContainer object:
@@ -141,7 +145,7 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
  constructor(private dialogService: DialogService) {}
 
  showFormInPopup() {
-	this.formDialogRef = this.dialogService.openDialog(FormDialogComponent, {
+  this.formDialogRef = this.dialogService.openDialog(FormDialogComponent, {
       data: {
         key: 'dialog-form-key',
         width: '500',
@@ -154,13 +158,12 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
 }
 
  onDialogClose() {
-	this.formDialogRef.afterClosed().pipe()
-    .subscribe( (action: DialogAction) => {
-	    if (action?.key === DefaultFormAction.create) {
-		    // save the date
-	    }
+  this.formDialogRef.afterClosed().pipe().subscribe( (action: DialogAction) => {
+    if (action?.key === DefaultFormAction.create) {
+      // process data
+      }
     }
-}
+  }
 ```
 
 
