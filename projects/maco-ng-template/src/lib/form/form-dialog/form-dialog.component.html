@@ -1,8 +1,8 @@
 <mat-dialog-content class="mat-typography entity-dialog">
   <div class="app-form-modal" [style.width.px]="formContainer.width">
     <h2>{{ formTitle | translate }}</h2>
-    <tf-form-container [formContainer]="formContainer"
-                        (formChanged)="onFormChanged($event)"></tf-form-container>
-    <tf-dialog-action [key]="formContainer.key" [actions]="actions"></tf-dialog-action>
+    <maco-form-container [formContainer]="formContainer"
+                        (formChanged)="onFormChanged($event)"></maco-form-container>
+    <maco-dialog-action [key]="formContainer.key" [actions]="actions"></maco-dialog-action>
 </div>
 </mat-dialog-content>

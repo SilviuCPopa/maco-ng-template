@@ -2,7 +2,7 @@
 
   <div [ngClass]="'app-form-container-' + column.renderType">
     <div class="app-form-item" [ngClass]="{ 'hidden': formItem.width == 0 }" [ngStyle]="{ 'width.%': formItem.width }" *ngFor="let formItem of column?.items">
-      <tf-form-item-dispacher [formItem]="formItem" [key]="formContainer.key"></tf-form-item-dispacher>
+      <maco-form-item-dispacher [formItem]="formItem" [key]="formContainer.key"></maco-form-item-dispacher>
     </div>
   </div>
 </div>
