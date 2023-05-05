@@ -17,19 +17,3 @@ export interface EntityDialogResult {
     data: EntityData;
 }
 
-export enum DefaultFormAction {
-    cancel = 'cancel',
-    save = 'save',
-    confirm = 'confirm',
-    create = 'create'
-}
-
-export interface DialogAction {
-    label: string;
-    key: string;
-    matColor?: string;
-    color?: string;
-    disabled?: boolean;
-    primary?: boolean;
-    data?: any;
-}
