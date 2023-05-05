@@ -1,6 +1,7 @@
 {
   "name": "maco-ng-template",
   "version": "0.0.1",
+  "homepage": "https://github.com/SilviuCPopa/maco-ng-template",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0"
