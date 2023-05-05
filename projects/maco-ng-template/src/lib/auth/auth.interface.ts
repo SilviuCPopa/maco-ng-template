@@ -12,3 +12,9 @@ export interface AuthResponse {
         userRoles?: AppRoles;
     }
 }
+
+export interface RefreshTokenConfig {
+  REFRESH_TOKEN_HOST: string;
+  CLIENT_ID: string;
+  CLIENT_SECRET: string;
+}

@@ -9,6 +9,7 @@ export * from './interfaces/form-autocomplete.interface';
 // Models
 export * from './models/form-type.enum';
 export * from './models/form-view-autocompleteitem.model';
+export * from './models/form-view-chips-autocomplete.model';
 export * from './models/form-view-baseitem.model';
 export * from './models/form-view-booleanitem.model';
 export * from './models/form-view-hiddenitem.model';

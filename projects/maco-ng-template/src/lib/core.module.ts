@@ -1,4 +1,4 @@
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormViewModule } from './form/form.module';
 import { SnackbarComponent } from './snackbar/snackbar.component';

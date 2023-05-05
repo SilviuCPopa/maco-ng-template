@@ -1,15 +1,19 @@
 import { Observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { AuthResponse } from './auth.interface';
+import { AuthResponse, RefreshTokenConfig } from './auth.interface';
+
+const REFRESH_TOKEN_CONFIG_DATA = new InjectionToken<any>('REFRESH_TOKEN_CONFIG_DATA');
 
 @Injectable({
   providedIn: 'root',
 })
 export class RefreshTokenService {
 
-  constructor(private jwtHelper: JwtHelperService) {}
+  constructor(
+    @Inject(REFRESH_TOKEN_CONFIG_DATA) private tokenConfigData: RefreshTokenConfig,
+    private jwtHelper: JwtHelperService) {}
 
   registerData(response: AuthResponse): void {
     this.setUserData(response);
@@ -21,7 +25,7 @@ export class RefreshTokenService {
     xhr.withCredentials = true;
 
     const body = this.buildRefreshTokenBody();
-    xhr.open('POST', `${'REFRESH_TOKEN_HOST'}`);
+    xhr.open('POST', `${this.tokenConfigData.REFRESH_TOKEN_HOST}`);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     return new Observable(observer => {
@@ -61,8 +65,8 @@ export class RefreshTokenService {
     const body = new HttpParams()
       .set('grant_type', 'refresh_token')
       .set(`refresh_token`, localStorage.getItem('refresh_token') ?? '')
-      .set(`client_id`, 'TOKEN.CLIENT_ID')
-      .set(`client_secret`, 'TOKEN.CLIENT_SECRET');
+      .set(`client_id`, this.tokenConfigData.CLIENT_ID)
+      .set(`client_secret`, this.tokenConfigData.CLIENT_SECRET);
 
     return body.toString();
   }
