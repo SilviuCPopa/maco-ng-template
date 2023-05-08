@@ -3,7 +3,7 @@ import { UntypedFormControl } from '@angular/forms';
 import { FormItemUpdateService } from '../../services/form-item-update.service';
 import { FormViewItemBaseDirective } from '../form-view-item.component';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import * as moment from 'moment';
+import moment from 'moment/moment';
 import { FormViewBaseItemModel } from '../../models/form-view-baseitem.model';
 
 @Component({
