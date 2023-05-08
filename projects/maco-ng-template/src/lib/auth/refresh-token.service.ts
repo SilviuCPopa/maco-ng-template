@@ -1,10 +1,8 @@
 import { Observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
-import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { AuthResponse, RefreshTokenConfig } from './auth.interface';
-
-const REFRESH_TOKEN_CONFIG_DATA = new InjectionToken<any>('REFRESH_TOKEN_CONFIG_DATA');
+import { AuthResponse, RefreshTokenConfig, REFRESH_TOKEN_CONFIG_DATA } from './auth.interface';
 
 @Injectable({
   providedIn: 'root',

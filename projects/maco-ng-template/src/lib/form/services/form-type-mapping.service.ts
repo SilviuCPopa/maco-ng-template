@@ -12,7 +12,7 @@ import { FormViewDropdownItemComponent } from '../form-items/form-view-dropdowni
 import { FormViewChipsAutocompleteComponent } from '../form-items/form-view-chips-autocomplete/form-view-chips-autocomplete.component';
 import { ComponentType } from '@angular/cdk/overlay';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class FormTypeMappingService {
 
     protected defaultValue: Type<{}> = FormViewTextitemComponent;

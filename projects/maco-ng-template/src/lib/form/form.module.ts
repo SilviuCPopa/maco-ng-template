@@ -52,8 +52,8 @@ export const FORM_ITEM_COMPONENTS = [
         FormItemDispacherComponent,
         ...FORM_ITEM_COMPONENTS
     ],
-    providers: [
-        FormTypeMappingService
+    exports: [
+      ...FORM_ITEM_COMPONENTS
     ]
 })
 export class FormViewModule {}

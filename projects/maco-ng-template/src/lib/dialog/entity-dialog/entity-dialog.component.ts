@@ -20,7 +20,7 @@ import { EntityDialogOperation, EntityDialogResult } from '../entity-dialog.inte
       private fb: UntypedFormBuilder) {}
 
     get nameControlErrors(): ValidationErrors {
-      return this.entityForm.controls['name'].errors;
+      return this.entityForm.controls['name'].errors ?? {};
     }
 
     get title() {

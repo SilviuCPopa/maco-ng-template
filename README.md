@@ -19,10 +19,10 @@ Import angular gmaps module into your app's module:
  Finally connect the component in  template:
 ```
 
-  <tf-form-container [formContainer]="formContainer"
-                        (formChanged)="onFormChanged($event)"></tf-form-container>
+  <maco-form-container [formContainer]="formContainer"
+                        (formChanged)="onFormChanged($event)"></maco-form-container>
 
-  <tf-dialog-action [key]="formContainer.key" [actions]="formContainer.actions"></tf-dialog-action>
+  <maco-dialog-action [key]="formContainer.key" [actions]="formContainer.actions"></maco-dialog-action>
 
   ```
 
