@@ -1,4 +1,4 @@
-tf-form-container {
+maco-form-container {
     width: 100%;
     justify-content: space-between;
 
@@ -7,7 +7,7 @@ tf-form-container {
         margin: 5px 0;
     }
 
-    .app-form {
+    .maco-form {
       &-column {
         display: flex;
         justify-content: space-between;
@@ -36,7 +36,7 @@ tf-form-container {
         justify-content: space-between;
         flex-wrap: nowrap;
 
-        .app-form-item:not(:first-child) {
+        .maco-form-item:not(:first-child) {
           margin-left: 15px;
         }
       }
