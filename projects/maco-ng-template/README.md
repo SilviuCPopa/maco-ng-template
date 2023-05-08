@@ -90,7 +90,7 @@ formContainer = {
           validators: [Validators.required],
         }),
       ],
-	actions: {
+	actions: [{
 	    label: 'Create',
 	    key: DefaultFormAction.create,
 	    matColor: 'primary',
@@ -99,7 +99,7 @@ formContainer = {
 	  {
 	    label: 'Cancel',
 	    key: DefaultFormAction.cancel,
-	  }
+	  }]
 	}
 ```
 

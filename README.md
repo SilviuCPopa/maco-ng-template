@@ -10,7 +10,7 @@ Import angular gmaps module into your app's module:
 
     import {NgModule} from '@angular/core';
     import {MacoNgCoreModule} from 'maco-ng-template';
-    
+
     @NgModule({
      imports: [MacoNgCoreModule]
      })
@@ -18,12 +18,12 @@ Import angular gmaps module into your app's module:
 
  Finally connect the component in  template:
 ```
-	
+
   <tf-form-container [formContainer]="formContainer"
                         (formChanged)="onFormChanged($event)"></tf-form-container>
-                        
+
   <tf-dialog-action [key]="formContainer.key" [actions]="formContainer.actions"></tf-dialog-action>
-  
+
   ```
 
 Example of a formContainer object:
@@ -90,7 +90,7 @@ formContainer = {
           validators: [Validators.required],
         }),
       ],
-	actions: {
+	actions: [{
 	    label: 'Create',
 	    key: DefaultFormAction.create,
 	    matColor: 'primary',
@@ -99,7 +99,7 @@ formContainer = {
 	  {
 	    label: 'Cancel',
 	    key: DefaultFormAction.cancel,
-	  }
+	  }]
 	}
 ```
 
