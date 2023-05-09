@@ -4,9 +4,8 @@ import { takeUntil } from 'rxjs/operators';
 import { DialogAction } from '../../dialog/dialog.interface';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UntypedFormGroup } from '@angular/forms';
-import { DialogActionSelectedService } from '../../dialog';
+import { DialogActionSelectedService, EntityDialogOperation } from '../../dialog';
 import { FormContainer } from '../interfaces/form-container.interface';
-import { EntityDialogOperation } from 'maco-ng-template';
 
 
 @Component({

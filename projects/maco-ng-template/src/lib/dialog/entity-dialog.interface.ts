@@ -3,6 +3,8 @@ export enum EntityDialogOperation {
     CREATE = 'CREATE',
     UPDATE = 'UPDATE',
     DELETE = 'DELETE',
+    CANCEL = "CANCEL",
+    CONFIRM = "CONFIRM"
 }
 
 export interface EntityData {
