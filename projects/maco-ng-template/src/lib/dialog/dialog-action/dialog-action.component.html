@@ -1,6 +1,6 @@
 <button *ngFor="let action of actions"
         mat-raised-button
-        class="maco-dialog-action"
+        class="maco-form-action"
         color="{{ action.matColor }}"
         [disabled]="action.disabled"
         (click)="onActionClicked(action)">{{ action.label | translate }}</button>

@@ -12,10 +12,3 @@ export interface DialogAction {
     primary?: boolean;
     data?: any;
 }
-
-export enum DefaultFormAction {
-    cancel = 'cancel',
-    save = 'save',
-    confirm = 'confirm',
-    create = 'create'
-}

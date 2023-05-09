@@ -3,11 +3,11 @@ import { DialogAction } from '../dialog.interface';
 import { DialogActionSelectedService } from '../services/dialog-action-selected.service';
 
 @Component({
-  selector: 'maco-dialog-action',
+  selector: 'maco-form-action',
   templateUrl: './dialog-action.component.html',
   styleUrls: ['./dialog-action.component.scss']
 })
-export class DialogActionComponent implements OnInit {
+export class FormActionComponent implements OnInit {
 
   @Input() key: string;
 

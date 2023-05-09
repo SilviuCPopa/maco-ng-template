@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogActionComponent } from './dialog-action.component';
+import { FormActionComponent } from './dialog-action.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { DialogActionSelectedService } from '../services/dialog-action-selected.service';
@@ -14,13 +14,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 
 describe('DialogActionComponent', () => {
-  let component: DialogActionComponent;
-  let fixture: ComponentFixture<DialogActionComponent>;
+  let component: FormActionComponent;
+  let fixture: ComponentFixture<FormActionComponent>;
   let actionSelectedService: DialogActionSelectedService;
 
   beforeEach(((done) => {
     TestBed.configureTestingModule({
-      declarations: [ DialogActionComponent ],
+      declarations: [ FormActionComponent ],
       imports: [
         MaterialModules,
         StoreModule.forRoot({}),
@@ -40,7 +40,7 @@ describe('DialogActionComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogActionComponent);
+    fixture = TestBed.createComponent(FormActionComponent);
     component = fixture.componentInstance;
     actionSelectedService = TestBed.inject(DialogActionSelectedService);
     fixture.detectChanges();

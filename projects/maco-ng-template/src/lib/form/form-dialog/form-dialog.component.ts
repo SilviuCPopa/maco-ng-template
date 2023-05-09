@@ -1,11 +1,12 @@
 import { Component, OnInit, Inject, OnDestroy, AfterViewInit, HostListener } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { DefaultFormAction, DialogAction } from '../../dialog/dialog.interface';
+import { DialogAction } from '../../dialog/dialog.interface';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UntypedFormGroup } from '@angular/forms';
 import { DialogActionSelectedService } from '../../dialog';
 import { FormContainer } from '../interfaces/form-container.interface';
+import { EntityDialogOperation } from 'maco-ng-template';
 
 
 @Component({
@@ -18,13 +19,13 @@ export class FormDialogComponent implements OnInit, AfterViewInit, OnDestroy {
   defaultFormActions: DialogAction[] = [
     {
       label: 'APP.ACTIONS.SAVE',
-      key: DefaultFormAction.save,
+      key: EntityDialogOperation.CREATE,
       matColor: 'primary',
       primary: true
     },
     {
       label: 'APP.ACTIONS.CANCEL',
-      key: DefaultFormAction.cancel
+      key: EntityDialogOperation.CANCEL
     }
   ];
 

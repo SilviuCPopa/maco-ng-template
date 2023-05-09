@@ -22,7 +22,7 @@ Import angular gmaps module into your app's module:
   <maco-form-container [formContainer]="formContainer"
                         (formChanged)="onFormChanged($event)"></maco-form-container>
 
-  <maco-dialog-action [key]="formContainer.key" [actions]="formContainer.actions"></maco-dialog-action>
+  <maco-form-action [key]="formContainer.key" [actions]="formContainer.actions"></maco-form-action>
 
   ```
 
@@ -92,13 +92,13 @@ formContainer = {
       ],
 	actions: [{
 	    label: 'Create',
-	    key: DefaultFormAction.create,
+	    key: EntityDialogOperation.CREATE,
 	    matColor: 'primary',
 	    primary: true,
 	  },
 	  {
 	    label: 'Cancel',
-	    key: DefaultFormAction.cancel,
+	    key: EntityDialogOperation.CANCEL,
 	  }]
 	}
 ```
@@ -159,7 +159,7 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
 
  onDialogClose() {
   this.formDialogRef.afterClosed().pipe().subscribe( (action: DialogAction) => {
-    if (action?.key === DefaultFormAction.create) {
+    if (action?.key === EntityDialogOperation.CREATE) {
       // process data
       }
     }
