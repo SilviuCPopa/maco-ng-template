@@ -6,6 +6,12 @@ Material Core Angular Template is a library which help integrating angular forms
 
 ## Getting started
 
+Install package
+
+```
+npm install maco-ng-template
+```
+
 Import angular gmaps module into your app's module:
 
     import {NgModule} from '@angular/core';
@@ -30,7 +36,7 @@ Example of a formContainer object:
 ```
 formContainer = {
 	key:  'form-container-example',
-	width:  '500',
+	width:  500,
 	title:  'Form title',
 	columns:  [
     {
@@ -148,11 +154,37 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
   this.formDialogRef = this.dialogService.openDialog(FormDialogComponent, {
       data: {
         key: 'dialog-form-key',
-        width: '500',
+        width: 500,
         title: 'Dummy form',
-        columns: formColumns,
-        actions: formActions
-      }
+        columns:  [
+          {
+            renderType: RenderType.COLUMN,
+            items: [
+              new FormViewHiddenItemModel({
+                label: '',
+                key: 'hidden-field',
+                value: null,
+                editable: false,
+                width: 0,
+              }),
+              new FormViewTextItemModel({
+                label: 'Input text field',
+                key: 'input-text',
+                editable: true,
+                value: 'text',
+                validators: [Validators.required],
+              })
+            ],
+            actions: [
+              {
+                label: 'Create',
+                key: EntityDialogOperation.CREATE,
+                matColor: 'primary',
+                primary: true,
+              }
+            ]
+          }
+        ]
     });
     this.onDialogClose();
 }
@@ -163,6 +195,69 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
       // process data
       }
     }
+  }
+```
+
+### FormItemUpdateService
+Service for managing dinamic data and enable/disable form inputs
+
+Methods of updater:
+
+- disableFormItem(key: string);
+- enableFormItem(key: string);
+- update(key: string, value: FormViewItemUpdate);
+- setAutocompleteItems(key: string, items: FormViewOptions[])
+
+Observables:
+
+- initialized$: Subject<string>(); // trigger when the input changes in initialized
+- itemUpdated$: Subject<FormViewItemUpdate>(); // trigger when the input value is changed
+
+```
+
+ const formItemKey = 'dummy-form-item';
+ const formItemKey2 = 'dummy-form-item2';
+
+ const autocompleteItems = [
+    {
+        id: '1',
+        name: 'option-1',
+        value: '1'
+    },
+    {
+        id: '2',
+        name: 'option-2',
+        value: '2'
+    }
+  ];
+
+ // Example of dynamically update values
+ updateFormItems() {
+  this.formItemUpdateService.disableFormItem(formItemKey);
+
+  // Update dropdown autocomplete form input
+  this.formItemUpdateService.setAutocompleteItems(formItemKey, autocompleteItems);
+
+  // Update generic form input field
+  this.formItemUpdateService.update(formItemKey2, {
+    key: dummy-form-item2,
+    label: 'new label',
+    value: 'new value'
+  });
+ }
+
+ // Listen of form autocomplete update value event
+listenForAutocompleteItemsChanges(formItemKey: string) {
+   this.formItemUpdateService.initialized$
+    .pipe(
+      filter(value => value === formItemKey)
+    ).subscribe(() => {
+        // subscribe for the desired formItem update event
+        this.formItemUpdateService.itemUpdated$[formItemKey].subscribe(option => {
+          this.formItemUpdateService.enableFormItem(formItemKey);
+          // process data
+        });
+      });
   }
 ```
 
