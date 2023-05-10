@@ -199,7 +199,7 @@ import { DialogService, FormDialogComponent } from 'maco-ng-template'
 ```
 
 ### FormItemUpdateService
-Service for managing dinamic data and enable/disable form inputs
+Service for managing dynamic data and enable/disable form inputs
 
 Methods of updater:
 
