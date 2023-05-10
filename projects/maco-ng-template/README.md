@@ -233,7 +233,7 @@ Observables:
 
  // Example of dynamically update values
  updateFormItems() {
-  this.formItemUpdateService.disableFormItem(formItemKey);
+  this.formItemUpdateService.disableFormItem(formItemKey2);
 
   // Update dropdown autocomplete form input
   this.formItemUpdateService.setAutocompleteItems(formItemKey, autocompleteItems);
@@ -254,7 +254,7 @@ listenForAutocompleteItemsChanges(formItemKey: string) {
     ).subscribe(() => {
         // subscribe for the desired formItem update event
         this.formItemUpdateService.itemUpdated$[formItemKey].subscribe(option => {
-          this.formItemUpdateService.enableFormItem(formItemKey);
+          this.formItemUpdateService.enableFormItem(formItemKey2);
           // process data
         });
       });
