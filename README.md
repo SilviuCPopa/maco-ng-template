@@ -210,7 +210,7 @@ Methods of updater:
 
 Observables:
 
-- initialized$: Subject<string>(); // trigger when the input changes in initialized
+- initialized$: Subject<string>(); // trigger when the input changes are initialized
 - itemUpdated$: Subject<FormViewItemUpdate>(); // trigger when the input value is changed
 
 ```
