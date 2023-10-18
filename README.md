@@ -125,8 +125,8 @@ All suported form fields:
  - FormViewTimePickerItemModel
 
  ## Documentation
-#### API reference for Angular Gmaps
-    import { MacoNgCoreModule } from 'angular-gmaps';
+#### API reference for Maco NG Template
+    import { MacoNgCoreModule } from 'maco-ng-template'
 #### FormContainerComponent
 Component responsible for managing the available material form fields components
 
