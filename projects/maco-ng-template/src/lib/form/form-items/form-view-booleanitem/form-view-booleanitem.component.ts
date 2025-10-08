@@ -6,8 +6,9 @@ import { FormViewItemBaseDirective } from '../form-view-item.component';
 import {MatCheckboxChange} from '@angular/material/checkbox';
 
 @Component({
-  selector: 'maco-form-view-booleanitem',
-  templateUrl: './form-view-booleanitem.component.html'
+    selector: 'maco-form-view-booleanitem',
+    templateUrl: './form-view-booleanitem.component.html',
+    standalone: false
 })
 export class FormViewBooleanItemComponent extends FormViewItemBaseDirective implements OnInit {
 

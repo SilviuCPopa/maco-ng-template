@@ -4,9 +4,10 @@ import { FormTypeMappingService } from '../services/form-type-mapping.service';
 import { FormViewItem } from '../interfaces/form-view-item.interface';
 
 @Component({
-  selector: 'maco-form-item-dispacher',
-  template: `<ng-template tfFormItemContentProxy></ng-template>`,
-  styleUrls: ['./form-item-dispacher.component.scss']
+    selector: 'maco-form-item-dispacher',
+    template: `<ng-template tfFormItemContentProxy></ng-template>`,
+    styleUrls: ['./form-item-dispacher.component.scss'],
+    standalone: false
 })
 export class FormItemDispacherComponent implements OnInit, OnDestroy {
 

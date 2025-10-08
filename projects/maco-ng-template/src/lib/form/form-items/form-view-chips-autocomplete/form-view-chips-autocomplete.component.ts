@@ -13,7 +13,8 @@ import { FormItemUpdateService } from '../../services/form-item-update.service';
 @Component({
     selector: 'maco-form-view-chips-autocomplete',
     templateUrl: 'form-view-chips-autocomplete.component.html',
-  })
+    standalone: false
+})
   export class FormViewChipsAutocompleteComponent extends FormViewItemBaseDirective implements OnInit, AfterContentChecked {
 
     @Input()

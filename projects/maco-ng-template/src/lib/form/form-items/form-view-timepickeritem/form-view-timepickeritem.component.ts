@@ -6,9 +6,10 @@ import { Subscription } from 'rxjs';
 import { FormViewBaseItemModel } from '../../models/form-view-baseitem.model';
 
 @Component({
-  selector: 'maco-form-view-timepicker',
-  templateUrl: './form-view-timepickeritem.component.html',
-  styleUrls: ['./form-view-timepickeritem.component.scss']
+    selector: 'maco-form-view-timepicker',
+    templateUrl: './form-view-timepickeritem.component.html',
+    styleUrls: ['./form-view-timepickeritem.component.scss'],
+    standalone: false
 })
 export class FormViewTimePickerItemComponent extends FormViewItemBaseDirective implements OnInit, OnDestroy {
 

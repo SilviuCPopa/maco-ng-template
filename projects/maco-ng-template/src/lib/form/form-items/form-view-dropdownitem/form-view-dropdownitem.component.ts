@@ -5,10 +5,11 @@ import { UntypedFormControl } from '@angular/forms';
 import { FormItemUpdateService } from '../../services/form-item-update.service';
 
 @Component({
-  selector: 'maco-form-view-dropdown',
-  templateUrl: './form-view-dropdownitem.component.html',
-  styleUrls: ['./form-view-dropdownitem.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'maco-form-view-dropdown',
+    templateUrl: './form-view-dropdownitem.component.html',
+    styleUrls: ['./form-view-dropdownitem.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class FormViewDropdownItemComponent extends FormViewItemBaseDirective implements OnInit {
 

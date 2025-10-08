@@ -5,8 +5,9 @@ import { UntypedFormControl } from '@angular/forms';
 import { FormViewBaseItemModel } from '../../models/form-view-baseitem.model';
 
 @Component({
-  selector: 'maco-form-view-textitem',
-  templateUrl: './form-view-textitem.component.html'
+    selector: 'maco-form-view-textitem',
+    templateUrl: './form-view-textitem.component.html',
+    standalone: false
 })
 export class FormViewTextitemComponent extends FormViewItemBaseDirective {
 

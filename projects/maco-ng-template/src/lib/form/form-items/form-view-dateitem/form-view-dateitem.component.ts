@@ -7,9 +7,10 @@ import moment from 'moment/moment';
 import { FormViewBaseItemModel } from '../../models/form-view-baseitem.model';
 
 @Component({
-  selector: 'maco-form-view-dateitem',
-  templateUrl: './form-view-dateitem.component.html',
-  styleUrls: ['./form-view-dateitem.component.scss']
+    selector: 'maco-form-view-dateitem',
+    templateUrl: './form-view-dateitem.component.html',
+    styleUrls: ['./form-view-dateitem.component.scss'],
+    standalone: false
 })
 export class FormViewDateitemComponent extends FormViewItemBaseDirective implements OnInit {
 

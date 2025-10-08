@@ -5,8 +5,9 @@ import { FormItemUpdateService } from '../../services/form-item-update.service';
 import { FormViewItemBaseDirective } from '../form-view-item.component';
 
 @Component({
-  selector: 'maco-form-view-textareaitem',
-  templateUrl: './form-view-textareaitem.component.html'
+    selector: 'maco-form-view-textareaitem',
+    templateUrl: './form-view-textareaitem.component.html',
+    standalone: false
 })
 export class FormViewTextareaitemComponent extends FormViewItemBaseDirective implements OnInit {
 

@@ -18,10 +18,11 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
-  selector: 'maco-datatable',
-  templateUrl: './datatable.component.html',
-  styleUrls: ['./datatable.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+    selector: 'maco-datatable',
+    templateUrl: './datatable.component.html',
+    styleUrls: ['./datatable.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatatableComponent implements OnChanges {
 

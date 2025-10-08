@@ -8,9 +8,10 @@ import { Observable, Subject } from 'rxjs';
 import { map, startWith, takeUntil, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'maco-form-view-autocompleteitem',
-  templateUrl: './form-view-autocompleteitem.component.html',
-  styleUrls: ['./form-view-autocompleteitem.component.scss']
+    selector: 'maco-form-view-autocompleteitem',
+    templateUrl: './form-view-autocompleteitem.component.html',
+    styleUrls: ['./form-view-autocompleteitem.component.scss'],
+    standalone: false
 })
 export class FormViewAutocompleteItemComponent extends FormViewTextitemComponent implements OnInit, OnDestroy {
 

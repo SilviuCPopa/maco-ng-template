@@ -3,9 +3,10 @@ import { DialogAction } from '../dialog.interface';
 import { DialogActionSelectedService } from '../services/dialog-action-selected.service';
 
 @Component({
-  selector: 'maco-form-action',
-  templateUrl: './dialog-action.component.html',
-  styleUrls: ['./dialog-action.component.scss']
+    selector: 'maco-form-action',
+    templateUrl: './dialog-action.component.html',
+    styleUrls: ['./dialog-action.component.scss'],
+    standalone: false
 })
 export class FormActionComponent implements OnInit {
 

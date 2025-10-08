@@ -7,10 +7,11 @@ import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'maco-form-container',
-  templateUrl: './form-container.component.html',
-  styleUrls: ['./form-container.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'maco-form-container',
+    templateUrl: './form-container.component.html',
+    styleUrls: ['./form-container.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class FormContainerComponent implements OnInit, OnDestroy {
 

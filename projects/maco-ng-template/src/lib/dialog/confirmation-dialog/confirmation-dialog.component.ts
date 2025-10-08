@@ -5,8 +5,9 @@ import { EntityDialogOperation } from '../entity-dialog.interface';
 @Component({
     selector: 'app-confirmation-dialog',
     templateUrl: 'confirmation-dialog.component.html',
-    encapsulation: ViewEncapsulation.None
-  })
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
+})
   export class ConfirmationDialogComponent {
     currentOperation: EntityDialogOperation;
 

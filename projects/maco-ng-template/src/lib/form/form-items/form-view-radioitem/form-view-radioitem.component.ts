@@ -5,9 +5,10 @@ import { UntypedFormControl } from '@angular/forms';
 import { FormItemUpdateService } from '../../services/form-item-update.service';
 
 @Component({
-  selector: 'maco-form-view-radioitem',
-  templateUrl: './form-view-radioitem.component.html',
-  styleUrls: ['./form-view-radioitem.component.scss']
+    selector: 'maco-form-view-radioitem',
+    templateUrl: './form-view-radioitem.component.html',
+    styleUrls: ['./form-view-radioitem.component.scss'],
+    standalone: false
 })
 export class FormViewRadioitemComponent extends FormViewItemBaseDirective implements OnInit {
 

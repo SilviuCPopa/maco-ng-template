@@ -7,11 +7,12 @@ import { FormViewBaseItemModel } from '../models/form-view-baseitem.model';
     selector: 'maco-form-view-hiddenitem',
     template: ``,
     styles: [
-      `:host {
+        `:host {
         display: none;
       }`
-    ]
-  })
+    ],
+    standalone: false
+})
   export class FormViewHiddenItemComponent extends FormViewItemBaseDirective {
 
     @Input()

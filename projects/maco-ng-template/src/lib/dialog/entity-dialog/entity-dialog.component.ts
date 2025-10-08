@@ -7,8 +7,9 @@ import { EntityDialogOperation, EntityDialogResult } from '../entity-dialog.inte
     selector: 'app-entity-dialog',
     templateUrl: 'entity-dialog.component.html',
     styles: ['mat-form-field { width: 100%; margin: 10px 0; }'],
-    encapsulation: ViewEncapsulation.Emulated
-  })
+    encapsulation: ViewEncapsulation.Emulated,
+    standalone: false
+})
   export class EntityDialogComponent implements OnInit {
 
     entityForm: UntypedFormGroup;

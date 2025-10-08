@@ -9,9 +9,10 @@ import { FormContainer } from '../interfaces/form-container.interface';
 
 
 @Component({
-  selector: 'maco-form-dialog',
-  templateUrl: './form-dialog.component.html',
-  styleUrls: ['./form-dialog.component.scss']
+    selector: 'maco-form-dialog',
+    templateUrl: './form-dialog.component.html',
+    styleUrls: ['./form-dialog.component.scss'],
+    standalone: false
 })
 export class FormDialogComponent implements OnInit, AfterViewInit, OnDestroy {
 
